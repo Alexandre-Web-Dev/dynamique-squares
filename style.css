@@ -1,0 +1,260 @@
+/** Scroll désactiver pour ne pas voir les carré naître et disparaître en dehors de l'écran */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+:root {
+  --v1: #dd2476;
+  --v2: white;
+}
+
+/* SQUARES */
+
+.settings {
+  background-color: var(--v1);
+  animation-name: slideBoxe;
+  animation-iteration-count: infinite;
+  position: absolute;
+  opacity: 0%;
+}
+
+/** Carrés doublés pour coller à la maquette */
+.square1 {
+  width: 20px;
+  height: 20px;
+  animation-duration: 30s;
+  animation-delay: 3s;
+  left: 15%;
+}
+
+.square1bis {
+  width: 20px;
+  height: 20px;
+  animation-duration: 30s;
+  animation-delay: 5s;
+  left: 15%;
+  animation-delay: 14s;
+}
+
+.square2 {
+  width: 15px;
+  height: 15px;
+  animation-duration: 65s;
+  left: 25%;
+  animation-delay: 4s;
+}
+
+.square3 {
+  width: 85px;
+  height: 85px;
+  animation-duration: 55s;
+  left: 30%;
+}
+
+.square3bis {
+  width: 85px;
+  height: 85px;
+  animation-duration: 55s;
+  left: 30%;
+  animation-delay: 25s;
+}
+
+.square4 {
+  width: 170px;
+  height: 170px;
+  animation-duration: 55s;
+  left: 40%;
+  animation-delay: 5s;
+}
+
+.square4bis {
+  width: 170px;
+  height: 170px;
+  animation-duration: 55s;
+  left: 40%;
+  animation-delay: 30s;
+}
+
+.square5 {
+  width: 60px;
+  height: 60px;
+  animation-duration: 45s;
+  left: 45%;
+}
+
+.square5bis {
+  width: 60px;
+  height: 60px;
+  animation-duration: 40s;
+  left: 45%;
+  animation-delay: 18s;
+}
+
+.square5c {
+  width: 25px;
+  height: 25px;
+  animation-duration: 80s;
+  left: 55%;
+  animation-delay: 17s;
+}
+
+.square6 {
+  width: 20px;
+  height: 20px;
+  animation-duration: 60s;
+  left: 73%;
+}
+
+.square6bis {
+  width: 20px;
+  height: 20px;
+  animation-duration: 55s;
+  left: 73%;
+  animation-delay: 26s;
+}
+
+.square7 {
+  width: 20px;
+  height: 20px;
+  animation-duration: 55s;
+  left: 77%;
+  animation-delay: 5s;
+}
+
+.square7bis {
+  width: 20px;
+  height: 20px;
+  animation-duration: 56s;
+  left: 77%;
+  animation-delay: 30s;
+}
+
+.square8 {
+  width: 110px;
+  height: 110px;
+  animation-duration: 55s;
+  left: 82%;
+  animation-delay: 2s;
+}
+
+.square8bis {
+  width: 110px;
+  height: 110px;
+  animation-duration: 55s;
+  left: 82%;
+  animation-delay: 27s;
+}
+
+.square9 {
+  width: 150px;
+  height: 150px;
+  animation-duration: 25s;
+  left: 92%;
+}
+
+.square9bis {
+  width: 150px;
+  height: 150px;
+  animation-duration: 25s;
+  left: 92%;
+  animation-delay: 10s;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 118px 40px 40px;
+}
+
+/* TITLES */
+
+strong {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+span {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 46px;
+  font-weight: 700;
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 17px;
+  font-weight: 300;
+  padding-bottom: 40px;
+}
+
+button {
+  background-color: var(--v1);
+  color: var(--v2);
+  border-radius: 3px;
+  border: none;
+  font-size: 25px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 13px 60px 15px 60px;
+  position: relative;
+}
+
+button:hover {
+  background-color: var(--v);
+  color: var(--v1);
+  border: 1px solid var(--v1);
+}
+
+/** Les carrés commencent l'anim. en dessous de la page et la termine au dessus */
+@keyframes slideBoxe {
+  from {
+    transform: translateY(105vh) rotate(0deg);
+    opacity: 40%;
+  }
+
+  70% {
+    opacity: 0%;
+    border-radius: 50%;
+  }
+
+  to {
+    transform: translateY(-40vh) rotate(540deg);
+  }
+}
+
+/*TODO: faire le responsive pour iPad */
+@media screen and (max-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  strong {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  button {
+    width: 110%;
+    font-size: 20px;
+    padding: 7px 60px 6px 60px;
+  }
+}
